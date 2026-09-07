@@ -119,6 +119,56 @@
           margin: 0 auto 1rem auto;
         }
       }
+      /* add summary */
+      details summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+
+      /* hide arrow */
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* custom arrow */
+      details summary::before {
+        content: "▶";
+        color: #C97B63;       /* 箭头颜色 */
+        font-size: 0.7em;     /* 箭头大小 */
+        margin-right: 8px;    /* 箭头和标题之间的距离 */
+      }
+      /* 展开后变成向下箭头 */
+      details[open] summary::before {
+        content: "▼";
+      }
+      /*profile*/
+      summary.speaker-profile::before {
+        content: "▶";
+        color:#999 ;
+        margin-right: 6px;
+        display: inline-block;
+        
+      }
+      details[open] summary.speaker-profile::before {
+        content: "▼";
+      }
+
+      /* keynote info*/
+      .keynote-info {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .keynote-photo img {
+        width: 180px;
+        border-radius: 8px;
+      }
+
+      .keynote-text {
+        flex: 1;
+      }
       /*add accepted papers*/
       .paper-list { list-style: none; padding: 0; }
       .paper-list li { line-height: 1.3; }
@@ -158,29 +208,20 @@
         <br />
         <br />
         <h2 class="subtitle has-text-centered">
-          
+          <a href="#keynote" class="button"><strong>Keynote Speaker</strong></a>
+          <a href="#schedule" class="button"><strong>Schedule</strong></a>
           <a href="#papers" class="button"><strong>Accepted Papers</strong></a>
           <a href="#call" class="button"><strong>Call For Papers</strong></a>
           <a href="#organizers" class="button"><strong>Organizers</strong></a>
           <a href="#attend" class="button"><strong>Attend</strong></a>
           <a href="#contact" class="button"><strong>Contact</strong></a>
           
-          <!-- <a href="#schedule" class="button"><strong>Schedule</strong></a> -->
-          <!-- <a href="#speakers" class="button"><strong>Speakers</strong></a> -->
-          <!-- <a href="#assistance" class="button"><strong>Assistance</strong></a>
-          <a href="#accepted-papers" class="button"><strong>Accepted Papers</strong></a>
-          <a href="#media" class="button"><strong>Media</strong></a>
-          <a href="#media-partners" class="button"><strong>Media Partners</strong></a> -->
         
         </h2>
         
       </div>
     </section>
-    <!-- <nav>
-          <a href="#call" class="button"><strong>Call For Papers</strong></a>
-          <a href="#organizers" class="button"><strong>Organizers</strong></a>
-          <a href="#contact" class="button"><strong>Contact</strong></a>
-        </nav> -->
+   
 
     <section class="section" style="margin-top: -50px">
       <div class="container is-max-desktop">
@@ -193,6 +234,156 @@
               <br> <p></p>
             HumSec aims to create a venue for researchers and practitioners to discuss human-centric cyber threats from both attack and defense perspectives, covering technical and human dimensions, with a focus on real-world settings. By bringing together security experts, human-centric researchers and practitioners, we seek to raise awareness of the growing impact of these threats and foster cross-disciplinary collaboration to build more robust and resilient systems in practice.
             </p> 
+            </div>
+          </div>
+        </section>
+        <section class="section" id="keynote">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Keynote Speaker</h2>
+            <div class="content has-text-justified">
+              <div class="keynote-info">
+                <div class="keynote-photo">
+                  <img src="/data/images/giovanni.png", alt="Giovanni Apruzzese">
+
+                </div>
+                <div class="keynote-text">
+                  <h3> Giovanni Apruzzese</h3>
+                  <strong class="high"> Assistant Professor at Reykjavik University, Iceland</strong>
+                  <details>
+                    <summary class="speaker-profile"><strong class="paper-author">More about Giovanni.</strong></summary>
+                    <p> Giovanni Apruzzese is an Assistant Professor within the Department of Computer Science at Reykjavik University, Iceland. Prior to this, he was affiliated with the Hilti Chair of Data and Application Security at the University of Liechtenstein---first as a PostDoc and then as an Assistant Professor. He obtained the PhD in Information and Communication Technologies at the University of Modena and Reggio Emilia (Italy) in 2020. He authored over 50 peer-reviewed papers at internationally-recognized research venues. His research interests encompass a variety of themes, most of which revolve around cybersecurity and artificial intelligence, but he also appreciates topics within human-computer interaction. His primary expertise lies in network security and in phishing detection. Giovanni also puts a lot of effort in servicing the scientific community, and he was awarded numerous recognitions for his reviewing duties in leading computer-science venues. He is the General Chair of IEEE SaTML 2027, one of the PC Co-chairs of ACM AISec 2026, one of the PC Vice-chairs of USENIX Security 2026, and has been an Associate Editor for ACM TAISAP since 2025, and an Area Chair for NeurIPS since 2024. Due to his interest in reviewing and his servicing committments, he has also recently engaged in researching the usage of large-language models for scientific peer reviewing.</p>
+                  </details>
+                  <hr>
+                   
+                  <div class="keynote-content">
+                    <h4>Misleading Large Language Models used (or misused) in Scientific Peer-Reviewing via Hidden Prompt-Injection Attacks</h4>
+                    <p>Large Language Models (LLMs) have revolutionized many aspects of our society. Many tasks encompassing document summarization or autonomous content generation can now benefit from the capabilities of LLMs. Among these, a domain in which LLMs are receiving incresing attention is that of scientific peer reviewing. Yet, usage of LLMs in this context must be done with due care: LLMs have certain blind spots which, if exploited, can lead to detrimental effects to the human requesting the service of an LLM. <br>
+In this talk, Giovanni will outline the reasons why the author of a scientific paper may want to mislead an LLM tasked to review a given paper. Based on these reasons, He will then explain ways in which one can reach their goal via "hidden prompt injections". Finally, He will discuss the results of a large-scale systematic analysis wherein they studied the impact of prompt-injection attacks against commercial LLMs (e.g., ChatGPT, Gemini). In doing so, He will also outline potential countermeasures---as well as counter-countermeasures. The takeaway is that blind reliance on LLMs for peer-review duties is strongly discouraged, and human oversight is still necessary. </p>
+
+                  </div>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          </div>
+        </section>
+        <section class="section" id="schedule">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Schedule</h2>
+            <div class="content has-text-justified">
+              <p> The workshop will be held on <strong>September 18, 2026</strong> from <strong>13:50-17:30 CEST.</strong></p>
+              <table class="table is-fullwidth is-bordered is-striped">
+                <thead>
+                  <tr>
+                    <th><strong class="high">Time</strong></th>
+                    <th><strong class="high">Session</strong></th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>13:50 – 14:40</td>
+                    <td>Keynote Talk</td>
+              
+                  </tr>
+                  <tr>
+                    <td>14:40 – 14:45</td>
+                    <td>Welcome and Opening Remarks</td>
+                    
+                  </tr>
+                  <tr>
+                    <td colspan="3"><strong>Session 1: Threats Perception and Usability Evaluation</strong></td>
+                  </tr>
+                  <tr>
+                    <td>14:45 – 14:58</td>
+                    <td>Modeling Human-Behavior Effects on Ransomware Resilience with Stage-Wise Markov Chains
+                      <br><p class="paper-author">Fred Kembamba, Javed I. Khan</p>
+                       </td>
+    
+                  </tr>
+                  <tr>
+                    <td>14:58 – 15:11</td>
+                    <td> Exploring Usability and Security Perceptions of Panic Passwords Against Coercion
+                     <br> <p class="paper-author">Christina Frederikke Nissen, Oksana Kulyk</p>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15:11 – 15:24</td>
+                    <td>Usability Evaluation of Loki as a Coercion-Resistant Internet Voting System
+                      <br> <p class="paper-author">Christina Frederikke Nissen, Oksana Kulyk, Rosario Giustolisi</p>
+
+
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>15:24 – 15:40</td>
+                    <td>Coffee Break</td>
+                  </tr>
+
+
+                  <tr>
+                    <td colspan="3"><strong>Session 2: Human-Centered Cyber Threats and Mitigation</strong></td>
+                  </tr>
+                  <tr>
+                    <td>15:40 – 15:53</td>
+                    <td>Inference Attacks and Defenses on LLM-Powered Phishing Email Detection Systems
+                      <p class="paper-author">Frederik Sherman, Yoni Birman</p>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>15:53 – 16:06</td>
+                    <td>Revisiting Deceptive and Malicious Advertisements in the Wild
+                      <p class="paper-author"> Clemens Bönnen, Ulrike Meyer</p>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>16:06 – 16:19</td>
+                    <td>From Fire Safety to Cybersecurity: Exploring the Role of Stress Exposure Training for Incident Response
+                      <p class="paper-author">Stefan Anthuber, Simon Rudhart, Uta Wagner, Sabrina Meindl, Michael Heigl, Manfred Vielberth</p>
+                    </td>
+              
+                  </tr>
+                  <tr>
+                    <td>16:19 - 16:32</td>
+                    <td>An Evaluation of Deepfake Defences: Detection, Watermarking, Labelling, and Content Provenance
+                      <p class="paper-author">Can Yavuz</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>16:32 - 16:45</td>
+                    <td> Assessing URL Literacy in an Enterprise Setting
+                      <p class="paper-author">Gokul Chettoor Jayakrishnan, Ajit Dhebe, Chinmay Mulay, Vijayanand Banahatti, Sachin Lodha</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>16:45 - 16:58</td>
+                    <td>Redesigning Trust: Replacing Dark Patterns with Fair Choice Architecture in Financial Interfaces
+                      <p class="paper-author">Oluwadamilola Awakan, Tawan Aroonwechkul, Roshan Gunjoor, Supriya Khadka, Sanchari Das</p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>16:58 - 17:11</td>
+                    <td>In Situ Key-Blocking using Trajectory Constraints to Avoid Reuse of Passwords
+                      <p class="paper-author">Sreecharan Bojja, Vijayanand Banahatti, Sachin Lodha</p>
+                    </td>
+                  </tr>
+                 <tr>
+                  <td>17:11 - 17:30</td>
+                  <td>Closing Remarks</td>
+                 </tr>
+              </tbody>
+            </table>
+
+
             </div>
           </div>
         </section>
@@ -247,9 +438,11 @@
               <li><p>Early registration deadline: August 10, 2026</p></li>
               <li><p>Workshop registration is recommended by August 14, 2026</p></li>
               <li><p>Online Registration close on September 4, 2026</p></li>
+              </ul>  
 
-              </ul>           
-              <p><strong class="high">Topics of Interest (but not limited to)</strong></p>
+              <details>       
+              <summary><strong class="high">Topics of Interest (but not limited to)</strong></summary>
+
               <ol>
                 <li>
                   <p><strong>Understanding, Measuring, and Characterizing Human-Targeted Cyber Threats</strong></p>
@@ -322,31 +515,14 @@
                <p> </p>
               <p> Downloads the workshop poster: <a href="/data/images/HumSec_poster.png" download>Poster image.</a>
               </p>
+              </details>  
+
 
                  
            </div>
           </div>
         </section>
-<!-- schedule, post it later -->
-        <!-- <section class="section" id="schedule">
-          <div class="container is-max-desktop content">
-            <h2 class="title">Schedule</h2>
-            <div class="content">
-              <ul style="list-style-type: none">
-              
-<li><b>13:30 - 13:45</b> Welcome.</li>
 
-  <li><b>13:45 - 15:00</b> Paper Session I.</li>
-
-  <li><b>15:00 - 15:25</b> Coffee Break &amp; Poster Session &amp; Social</li>
-  <li><b>15:25 - 16:45</b> Paper Session II</li>
-  <li><b>15:45 - 17:00</b> Closing Session.</li>
-
-
-              </ul>
-            </div>
-          </div>
-        </section> -->
 
         <section class="section" id="organizers">
           <div class="container is-max-desktop content">
